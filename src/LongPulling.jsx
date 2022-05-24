@@ -13,7 +13,7 @@ function LongPulling() {
 
     const subscribe = async () => {
         try {
-        const {data} =    await axios.get('https://server-real-time-chat.vercel.app/get-messages',)
+        const {data} =    await axios.get('http://server-real-time-chat.vercel.app/get-messages',)
         setMessages(prev => [data, ...prev])
         await subscribe()
         } catch (e) {
@@ -23,7 +23,7 @@ function LongPulling() {
         }
     }
     const sendMessage = async() => {
-       await axios.post('https://server-real-time-chat.vercel.app/new-messages',{
+       await axios.post('http://server-real-time-chat.vercel.app/new-messages',{
         message:value,
         id: Date.now()
         })
